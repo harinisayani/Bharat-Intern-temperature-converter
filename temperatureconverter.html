@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Temperature converter</title>
+        <link rel="stylesheet" href="temperatureconverter.css">
+    </head>
+    <body class="main-block">
+        
+    <section id="first">
+        <div class="second">
+            <header style="text-align: center; font-style:italic;font-size: 40px; color:rgb(125, 13, 216)">Temperature Converter</header><br>
+            <label style="font-size: 28px;font-style: italic;">Celsius  : &nbsp;</label>
+            <input type="number" id="demo2" placeholder="Celsius"  oninput="temperature(this.value)" style="font-size: 24px;border-color:rgb(45, 182, 206);"><br><br>
+            <label style="font-size: 28px;font-style: italic;">Fahrenheit  :&nbsp;</label>
+            <input type="number" id="demo" placeholder="Fahrenheit"  oninput="temperature1(this.value)" style="font-size:24px;border-color:rgb(45, 182, 206);"><br><br>
+            <label style="font-size: 28px;font-style: italic;">Kelvin  :&nbsp;</label>
+            <input type="number" id="demo1"  oninput="temperature2(this.value)"placeholder="Kelvin" style="font-size: 24px;border-color: rgb(45, 182, 206);"><br><br>
+            <input type="button" value="Clear" onclick="clearvalue()" style="font-size:24px;font-style: italic;margin-left:5px;color:rgb(38, 212, 22);border-color:rgb(45, 182, 206);">
+        </div>
+    </section>
+        <script>
+            function temperature(valnum){
+                valnum=parseFloat(valnum);
+                demo.value=(9/5*valnum)+32;
+                demo1.value=273.15+valnum;
+            }
+            function temperature1(valnum1){
+                valnum1=parseFloat(valnum1);
+                demo2.value=(valnum1-32)*5/9;
+                demo1.value=((valnum1-32)*5/9)+273.15;
+            }
+            function temperature2(valnum2){
+                valnum2=parseFloat(valnum2);
+                demo2.value=valnum2-273.15;
+                demo.value=((valnum2-273.15)*9/5)+32;
+            }
+            function clearvalue()
+            {
+                demo.value='';
+                demo1.value='';
+                demo2.value='';
+            }
+        </script>
+    
+    </body>
+</html>
